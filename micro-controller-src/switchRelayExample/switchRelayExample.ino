@@ -1,9 +1,10 @@
 #include <ESP8266WiFi.h>
-#define relayPin 7
+#define relayPin D7
 void setup(){
-    pinMode(7,OUTPUT);
+    Serial.begin(9600);
+    pinMode(relayPin,OUTPUT);
     WiFi.mode(WIFI_STA);
-    WiFi.begin( "nameWifi","password");//Function to connect to wifi hotspot
+    WiFi.begin( "wifi name","password");//Function to connect to wifi hotspot
     while (WiFi.status() != WL_CONNECTED)  
     {
         delay(500);
